@@ -26,7 +26,7 @@ def mov_file(dp_input,file,dp_output,foname):
 
 
 if __name__=='__main__':
-    strin = "[Abe Manabu] Mama Life!.cbz"
+    
     print("source dir: ")
     dp_input= input()
     print ("target dir : ")
