@@ -32,17 +32,7 @@ if __name__=='__main__':
     print ("target dir : ")
     dp_output=input()
     dirs = listdir(dp_input)
-    # foname,finame=parsing(strin)
-    # dir_maker(dp_input,foname)
-    # mov_file (dp_input,strin,dp_output,foname)
     for file in dirs:
         foname,finame=parsing(file)
         dir_maker(dp_output,foname)
-        mov_file (dp_input,strin,dp_output,foname)
-        # print (foname)
-        # print(finame)
-        # path=join(dp_input,foname)
-        # print(path)
-        # print (file)
-    
-    # parsing(strin)
+        mov_file (dp_input,file,dp_output,foname)
