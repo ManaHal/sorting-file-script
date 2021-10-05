@@ -1,0 +1,48 @@
+import os
+import shutil
+from os import listdir,mkdir
+from os.path import isfile,join,isdir
+from shutil import move,copy
+
+
+
+def parsing (strin):
+    strin = strin.replace("[","")
+    artist, tittle = strin.split("] ")
+    return (artist, tittle)
+
+def dir_maker(dp_output,foname):
+    path=join(dp_output,foname)
+    if isdir(path):
+        pass
+    else:
+        mkdir(path)
+
+def mov_file(dp_input,file,dp_output,foname):
+    dp_input= join(dp_input,file)
+    dp_output=join(join(dp_output,foname),file)
+    copy(dp_input,dp_output)
+    # move(dp_input,dp_output)
+
+
+if __name__=='__main__':
+    strin = "[Abe Manabu] Mama Life!.cbz"
+    print("source dir: ")
+    dp_input= input()
+    print ("target dir : ")
+    dp_output=input()
+    dirs = listdir(dp_input)
+    # foname,finame=parsing(strin)
+    # dir_maker(dp_input,foname)
+    # mov_file (dp_input,strin,dp_output,foname)
+    for file in dirs:
+        foname,finame=parsing(file)
+        dir_maker(dp_output,foname)
+        mov_file (dp_input,strin,dp_output,foname)
+        # print (foname)
+        # print(finame)
+        # path=join(dp_input,foname)
+        # print(path)
+        # print (file)
+    
+    # parsing(strin)
